@@ -1,1 +1,32 @@
-<p>task-form works!</p>
+<h2>Create a New Task</h2>
+<form (ngSubmit)="onSubmit()" #taskForm="ngForm">
+    <label>
+    Title:
+    <input type="text" [(ngModel)]="task.title" name="title" required />
+    </label>
+    <br /><br />
+
+    <label>
+    Category:
+    <input type="text" [(ngModel)]="task.category" name="category" required />
+    </label>
+    <br /><br />
+
+    <label>
+    Priority:
+    <select [(ngModel)]="task.priority" name="priority">
+        <option>High</option>
+        <option>Medium</option>
+        <option>Low</option>
+    </select>
+</label>
+<br /><br />
+
+    <label>
+    Completed:
+    <input type="checkbox" [(ngModel)]="task.completed" name="completed" />
+    </label>
+    <br /><br />
+
+    <button type="submit" [disabled]="taskForm.invalid">Create Task</button>
+</form>

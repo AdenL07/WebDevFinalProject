@@ -1,0 +1,46 @@
+.home {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.home h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.home p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.home button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.home button:hover {
+    background-color: #0056b3;
+}
+.home-image {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.home-image img {
+    max-width: 400px;
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.home-image img:hover {
+    transform: scale(1.03);
+}
