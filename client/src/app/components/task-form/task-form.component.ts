@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   standalone: true,
@@ -17,14 +18,15 @@ export class TaskFormComponent {
     completed: false
   };
 
+  constructor(private api: ApiService) {}
+
   onSubmit() {
-    console.log('Task submitted:', this.task);
-    alert('Task created successfully!');
-    this.task = {
-      title: '',
-      category: '',
-      priority: 'Medium',
-      completed: false
-    };
+    this.api.createTask(this.task).subscribe({
+      next: () => {
+        alert('Task created!');
+        this.task = { title: '', category: '', priority: 'Medium', completed: false };
+      },
+      error: () => alert('Failed to create task')
+    });
   }
 }

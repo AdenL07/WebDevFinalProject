@@ -1,11 +1,31 @@
 import { Component } from '@angular/core';
+import { ApiService } from '../../services/api.service';
+import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
+  standalone: true,
   selector: 'app-login',
-  imports: [],
+  imports: [FormsModule, CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
+  form = { username: '', password: '' };
+  error = '';
 
+  constructor(private api: ApiService, private router: Router) {}
+
+  login() {
+    this.api.login(this.form).subscribe({
+      next: (res) => {
+        localStorage.setItem('token', res.token);
+        this.router.navigate(['/tasks']);
+      },
+      error: () => {
+        this.error = 'Invalid credentials';
+      }
+    });
+  }
 }
