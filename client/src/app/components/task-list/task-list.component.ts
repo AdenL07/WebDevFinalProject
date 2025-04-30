@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ApiService } from '../../services/api.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   standalone: true,
   selector: 'app-task-list',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.css']
 })
@@ -23,6 +24,24 @@ export class TaskListComponent {
     this.api.getTasks().subscribe({
       next: (data) => this.tasks = data,
       error: (err) => console.error('Error loading tasks', err)
+    });
+  }
+  deleteTask(taskId: string) {
+    this.api.deleteTask(taskId).subscribe({
+      next: () => {
+        this.tasks = this.tasks.filter(task => task._id !== taskId);
+      },
+      error: (err) => console.error('Error deleting task:', err)
+    });
+  }
+  
+  toggleComplete(task: any) {
+    const updatedTask = { ...task, completed: !task.completed };
+    this.api.updateTask(task._id, updatedTask).subscribe({
+      next: () => {
+        task.completed = updatedTask.completed; // update locally after server confirms
+      },
+      error: (err) => console.error('Error updating task:', err)
     });
   }
 }
