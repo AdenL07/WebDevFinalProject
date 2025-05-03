@@ -1,7 +1,12 @@
 <div class="container mt-5">
   <h2 class="text-center mb-4">Task List</h2>
 
+  <div *ngIf="tasks.length == 0" class="text-center display-6 mt-4"> 
+    No tasks available. Please add a task.
+  </div>
+
   <div class="row row-cols-1 row-cols-md-3 g-4 ">
+    
     <div class="col" *ngFor="let task of tasks">
       <div
         class="card shadow-sm rounded-4 h-100 "
