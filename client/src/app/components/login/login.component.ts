@@ -23,7 +23,7 @@ export class LoginComponent {
       next: (res) => {
         localStorage.setItem('token', res.token);
         this.auth.notifyLogin();
-        this.router.navigate(['/tasks']);
+        this.router.navigate(['/home']);
       },
       error: () => {
         this.error = 'Invalid credentials';
