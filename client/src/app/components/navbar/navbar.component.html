@@ -14,7 +14,7 @@
       </ul>
   
   
-      <ul class="navbar-nav ml-auto" *ngClass="{'d-none': isLoggedIn}">
+      <ul class="navbar-nav" style="margin-left: auto;" *ngIf="!isLoggedIn">
         <li class="nav-item">
           <a class="nav-link px-3 rounded-pill" routerLink="/login" routerLinkActive="active">Login</a>
         </li>
