@@ -20,4 +20,11 @@ export class AuthService {
     this.loginStatus.next(true);
   }
 
+  //user logs out
+  public logout(): void {
+    localStorage.removeItem('token');
+    this.loginStatus.next(false);
+  }
+  
+
 }

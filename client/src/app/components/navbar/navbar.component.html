@@ -25,8 +25,8 @@
 
       <ul class="navbar-nav" *ngIf="isLoggedIn">
 
-        <li class="nav-item" style="width: 100px;">
-          <a class="nav-link px-3 rounded-pill" routerLink="/logout" routerLinkActive="active"></a>
+        <li class="nav-item">
+          <a class="nav-link px-3 rounded-pill" routerLink="/logout" (click)="logout()" routerLinkActive="active">Logout</a>
         </li>
       </ul>
 

@@ -22,6 +22,9 @@ export class NavbarComponent implements OnInit {
       });
     }
   
-
-  
+    logout() {
+      this.authService.logout();
+      console.log('User logged out');
+      window.location.href = '/home'; 
+    }
 }
