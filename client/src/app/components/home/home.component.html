@@ -3,8 +3,8 @@
     <p>Your simple solution for managing tasks efficiently.</p>
     <button routerLink="/tasks" *ngIf="isLoggedIn">View Tasks</button>
     <div *ngIf="!isLoggedIn" class="d-flex gap-2" style="justify-content: center;">
-        <button routerLink="/register" style="width: 100px;">Login</button>
-        <button routerLink="/login"  style="width: 100px;">Register</button>
+        <button routerLink="/login" style="width: 100px;">Login</button>
+        <button routerLink="/register"  style="width: 100px;">Register</button>
     </div>
     <div class="home-image">
         <img src="assets/TaskManage.jpg" alt="Task illustration"/>
