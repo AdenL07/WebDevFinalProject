@@ -27,7 +27,13 @@ export class TaskListComponent {
       error: (err) => console.error('Error loading tasks', err)
     });
   }
-  deleteTask(taskId: string) {
+  deleteTask(task: Task) {
+    const taskId = task._id; 
+    if (!taskId) {
+      console.error('Task ID is missing');
+      return;
+    }
+
     this.api.deleteTask(taskId).subscribe({
       next: () => {
         this.tasks = this.tasks.filter(task => task._id !== taskId);
@@ -36,8 +42,12 @@ export class TaskListComponent {
     });
   }
   
-  toggleComplete(task: any) {
+  toggleComplete(task: Task) {
     const updatedTask = { ...task, completed: !task.completed };
+    if (!task._id) {
+      console.error('Task ID is missing');
+      return;
+    }
     this.api.updateTask(task._id, updatedTask).subscribe({
       next: () => {
         task.completed = updatedTask.completed; // update locally after server confirms
