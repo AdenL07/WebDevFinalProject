@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
+import { Task } from '../../interfaces/task';
 
 @Component({
   standalone: true,
@@ -13,7 +14,7 @@ import { ApiService } from '../../services/api.service';
 })
 export class TaskEditComponent {
   taskId!: string;
-  task = {
+  task: Task = {
     title: '',
     category: '',
     priority: 'Medium',

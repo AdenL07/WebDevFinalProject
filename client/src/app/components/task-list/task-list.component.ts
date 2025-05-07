@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ApiService } from '../../services/api.service';
 import { RouterModule } from '@angular/router';
+import { Task } from '../../interfaces/task';
 
 @Component({
   standalone: true,
@@ -16,7 +17,7 @@ export class TaskListComponent {
   //  { title: 'Walk the dog', category: 'Personal', priority: 'Medium', completed: true },
   //  { title: 'Team meeting at 3PM', category: 'Work', priority: 'High', completed: false }
   //];
-  tasks: any[] = [];
+  tasks: Task[] = [];
 
   constructor(private api: ApiService) {}
 

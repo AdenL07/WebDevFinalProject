@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
+import { User } from '../../interfaces/user';
 
 @Component({
   standalone: true,
@@ -13,7 +14,7 @@ import { AuthService } from '../../services/auth.service';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  form = { username: '', password: '' };
+  form : User = { username: '', password: '' };
   error = '';
 
   constructor(private api: ApiService, private router: Router, private auth: AuthService) {}

@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ApiService } from '../../services/api.service';
 import { Router } from '@angular/router';
+import { User } from '../../interfaces/user';
 
 @Component({
   standalone: true,
@@ -12,7 +13,7 @@ import { Router } from '@angular/router';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
-  form = {
+  form : User = {
     username: '',
     password: ''
   };

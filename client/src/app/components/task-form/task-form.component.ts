@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ApiService } from '../../services/api.service';
+import { Task } from '../../interfaces/task';
 
 @Component({
   standalone: true,
@@ -11,12 +12,7 @@ import { ApiService } from '../../services/api.service';
   styleUrls: ['./task-form.component.css']
 })
 export class TaskFormComponent {
-  task = {
-    title: '',
-    category: '',
-    priority: 'Medium',
-    completed: false
-  };
+  task: Task = { title: '', category: '', priority: 'Medium', completed: false };
 
   constructor(private api: ApiService) {}
 
