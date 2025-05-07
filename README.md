@@ -14,6 +14,15 @@ ToDo Tracker is a full-stack web application built with the MEAN stack (MongoDB,
 
 * **Deployment (Vercel)**
 
+TEAM ROLES: 
+
+Aden Landy
+Front-End, Angular, Presentation
+Noah Fouts
+Backend, Express, Node Presentation
+Xavier Hampton
+Database, UI/UX, Deployment, Presentation
+
 
 ## Deployment
 
