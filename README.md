@@ -26,7 +26,7 @@ Database, UI/UX, Deployment, Presentation
 
 ## Deployment
 
-* **Live App URL:** [test.com](webdevfinalproject.vercel.app)
+* **Live App URL:** [(webdevfinalproject.vercel.app)](https://webdevfinalproject.vercel.app/home)
 
 ## Presentation
 
